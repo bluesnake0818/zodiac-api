@@ -10,8 +10,8 @@ function create(req, res) {
 }
 
 function index(req, res) {
-  Puppy.find({})
-  .then(puppies => res.json(puppies))
+  Zodiac.find({})
+  .then(zodiacs => res.json(zodiacs))
   .catch(err => {
     console.log(err)
     res.json(err)
@@ -19,8 +19,8 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Puppy.findById(req.params.id)
-  .then(puppy => res.json(puppy))
+  Zodiac.findById(req.params.id)
+  .then(zodiac => res.json(zodiac))
   .catch(err => {
     console.log(err)
     res.json(err)
@@ -28,17 +28,17 @@ function show(req, res) {
 }
 
 function update(req, res) {
-  Puppy.findByIdAndUpdate(req.params.id, req.body, {new: true})
-  .then(puppy => res.json(puppy))
+  Zodiac.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(zodiac => res.json(zodiac))
   .catch(err => {
     console.log(err)
     res.json(err)
   })
 }
 
-function deletePuppy(req, res) {
-  Puppy.findByIdAndDelete(req.params.id)
-  .then(puppy => res.json(puppy))
+function deleteZodiac(req, res) {
+  Zodiac.findByIdAndDelete(req.params.id)
+  .then(zodiac => res.json(zodiac))
   .catch(err => {
     console.log(err)
     res.json(err)
@@ -50,6 +50,6 @@ export {
   index,
   show, 
   update, 
-  deletePuppy as delete,
+  deleteZodiac as delete,
   
 }
